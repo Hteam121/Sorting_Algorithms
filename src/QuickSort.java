@@ -49,8 +49,8 @@ public class QuickSort {
 				list[low] = temp;
 
 				countMov++;
-				countComp++;
 			}
+			countComp++;
 		}
 		
 		while (high > first && list[high] >= pivot){
@@ -59,7 +59,7 @@ public class QuickSort {
 			countComp++;
 		}
 
-		countComp++;
+		countComp += 2;
 		//	Swap pivot with list[high]
 		if (pivot > list[high]) {
 			list[first] = list[high];

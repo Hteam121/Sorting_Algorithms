@@ -27,12 +27,12 @@ public class Heap<E extends Comparable<E>> {
 				list.set(currentIndex, list.get(parentIndex));
 				list.set(parentIndex, temp);
 
-				countComp++;
 				countMov++;
 			}
 			else
 				break; // The tree is a heap now
-			
+
+			countComp++;
 			currentIndex = parentIndex;
 		}
 	}
@@ -54,20 +54,20 @@ public class Heap<E extends Comparable<E>> {
 			
 			//	Find the maximum between two children
 			if (leftChildIndex >= list.size()) {
-				countComp++;
 				break; // The tree is a heap
 			}
+			countComp++;
 			int maxIndex = leftChildIndex;
 			if (rightChildIndex < list.size()) {
-				countComp++;
 
 				if (list.get(maxIndex).compareTo(list.get(rightChildIndex)) < 0) {
 					maxIndex = rightChildIndex;
 
-					countComp++;
 					countMov++;
 				}		
 			}
+
+			countComp += 2;
 			
 			//	Swap if the current node is less than the maximum
 			if (list.get(currentIndex).compareTo(list.get(maxIndex)) < 0) {
@@ -76,11 +76,11 @@ public class Heap<E extends Comparable<E>> {
 				list.set(currentIndex, temp);
 				currentIndex = maxIndex;
 
-				countComp++;
 				countMov++;
 			}
 			else
 				break; // The tree is a heap
+			countComp += 2;
 		}
 		
 		return removedObject;

@@ -14,7 +14,7 @@ public class InsertionSort {
 			for (k = i-1; k>= 0 && list[k] > currentElement; k--) {
 				list[k+1] = list[k];
 
-				countMov++; //Probably not right
+				countMov++;
 				countComp++;
 			}
 			countComp++;

@@ -32,7 +32,6 @@ public class MergeSort {
 		int current3 = 0; // Current index in temp
 		
 		while (current1 < list1.length && current2 < list2.length) {
-			countComp++;
 			countMov++;
 
 			if (list1[current1] < list2[current2])
@@ -40,12 +39,12 @@ public class MergeSort {
 			else
 				temp[current3++] = list2[current2++];
 		}
+
 		
 		while (current1 < list1.length) {
 			temp[current3++] = list1[current1++];
 
 			countMov++;
-			countComp++;
 		}
 
 		
@@ -53,8 +52,9 @@ public class MergeSort {
 			temp[current3++] = list2[current2++];
 
 			countMov++;
-			countComp++;
 		}
+
+		countComp += 4;
 	}
 
 	public  String getCounts() {

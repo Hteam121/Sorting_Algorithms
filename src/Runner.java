@@ -1,8 +1,9 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Runner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         /** TEST CODE
         DataType s = new DataType("InOrder", 1500);
@@ -107,6 +108,7 @@ public class Runner {
 
         //Experimental Results
         System.out.println(experimentalResults(dataType, size, sortingAlgIndex));
+//        System.out.println(printData()); //Print out all possible run cases and then use python to format data into excel
     }
 
     public static String experimentalResults(String dataType, int size, int sortingAlgIndex){
@@ -162,4 +164,5 @@ public class Runner {
 
         return ans;
     }
+
 }

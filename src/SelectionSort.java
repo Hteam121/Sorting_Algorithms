@@ -15,8 +15,8 @@ public class SelectionSort {
 					currentMin = list[j];
 					currentMinIndex = j;
 
-					countComp++;
 				}
+				countComp++;
 			}
 			
 			//	Swap list[i] with list[currentMinIndex[ if necessary
@@ -26,6 +26,7 @@ public class SelectionSort {
 
 				countMov++;
 			}
+			countComp++;
 		}
 
 		return getCounts(countComp, countMov);
